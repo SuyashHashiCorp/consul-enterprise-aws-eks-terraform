@@ -12,8 +12,8 @@ Terraform code to install create EKS cluster using NodeGroup and install Consul 
 
 ## Required Changes to do before Terraform execution 
 1. ```shell
-   git clone https://github.com/SuyashHashiCorp/consul-aws-eks-terraform.git
-   cd consul-aws-eks-terraform
+   git clone https://github.com/SuyashHashiCorp/consul-enterprise-aws-eks-terraform.git
+   cd consul-enterprise-aws-eks-terraform
    ```
 
 2. Update the values as per the below table in **variables.tf** file -
@@ -55,4 +55,5 @@ terraform apply -auto-approve
 ## Reference URL - 
 1. [Consul Helm Chart Reference](https://developer.hashicorp.com/consul/docs/k8s/helm)
 2. [Consul on Kubernetes Version Compatibility](https://developer.hashicorp.com/consul/docs/k8s/compatibility)
-3. [Consul on Amazon Elastic Kubernetes Service (EKS)](https://developer.hashicorp.com/consul/tutorials/kubernetes/kubernetes-eks-aws)
+3. [Deploy Consul Enterprise on Kubernetes](https://developer.hashicorp.com/consul/docs/k8s/deployment-configurations/consul-enterprise)
+4. [consul-aws-eks-terraform](https://github.com/SuyashHashiCorp/consul-aws-eks-terraform) - This GitHub repo for Creating EKS cluster and installing Consul OSS on it using Terraform.
