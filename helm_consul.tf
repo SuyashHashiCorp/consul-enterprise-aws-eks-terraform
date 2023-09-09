@@ -17,8 +17,6 @@ resource "helm_release" "consul" {
   name       = "consul"
   repository = "https://helm.releases.hashicorp.com"
   chart      = "consul"
-  #version          = var.chart_version
-  #create_namespace = true
   namespace   = "consul"
   max_history = var.max_history
   timeout     = var.timeout
