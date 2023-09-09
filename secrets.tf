@@ -8,22 +8,19 @@ terraform {
 }
 
 provider "kubernetes" {
-  #config_path            = base64decode(aws_eks_cluster.my_cluster.certificate_authority.0.data)
   host                   = aws_eks_cluster.my_cluster.endpoint
   cluster_ca_certificate = base64decode(aws_eks_cluster.my_cluster.certificate_authority.0.data)
   token                  = data.aws_eks_cluster_auth.my_cluster_auth.token
 }
 
-/*
 data "kubernetes_namespace" "consul_ns" {
   metadata {
     name = var.namespace
   }
 }
-*/
 
 resource "kubernetes_namespace" "consul" {
- # count = data.kubernetes_namespace.consul_ns == "consul" ? 0 : 1
+  count = data.kubernetes_namespace.consul_ns == "consul" ? 0 : 1
   metadata {
     annotations = {
       name = "consul"
